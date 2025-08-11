@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class = "auth-container">
+  <h2>Welcome to the Secured Page!</h2>
+  <p>You are successfully logged in.</p>
+  <button onclick="logoutUser()">Logout</button>
+  </div>
+
+  <script>
+    // Check if user is logged in
+    if (!localStorage.getItem("isLoggedIn")) {
+      alert("Please login first!");
+      window.location.href = "index.html";
+    }
+
+    function logoutUser() {
+      localStorage.removeItem("isLoggedIn");
+      alert("Logged out successfully!");
+      window.location.href = "index.html";
+    }
+  </script>
+</body>
+</html>
